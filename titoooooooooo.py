@@ -1,1 +1,1 @@
-#  rigde
+#  rigde wallet
