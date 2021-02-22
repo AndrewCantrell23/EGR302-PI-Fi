@@ -13,10 +13,49 @@
         </div>
     </div>
     <div class="container">
+        <p style="color:white">
     Here you can test the wifi speeds of various locations around campus.
-    Check which place has the better connection so you may resume your work (or at least spend the next few hours)
+    Check which place has the better connection so you may resume your work (or at least spend the next few hours).
+    </p>
     </div>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    /* body design */
+    body {
+        background-color: black;
+        text-align: center;
+    }
+
+    /* header design */
+    h1 {
+        color: white;
+    }
+
+    /* button design */
+    .btn {
+    border-radius: 4px; background-color: grey;  border: none; color: black;
+    text-align: center; font-size: 25px; padding: 14px;  width: 200px; transition: all 0.5s;
+    cursor: pointer; display: inline-block; margin: 5px;
+    }
+    .btn span {
+    cursor: pointer; display: inline-block; position: relative; transition: 0.5s;
+     }
+    .btn span:after {
+     content: '\00bb'; position: absolute; opacity: 0; top: 0; right: -40px; transition: 0.5s; color: black;
+     }
+     .btn:hover span {
+     padding-right: 25px;
+     }
+     .btn:hover span:after {
+     opacity: 1; right: 0;
+     }
+</style>
+
+
 <body>
+<button class="btn"><span><b>Compare with</b></span></button>
+<button class="btn"><span><b>Single History</b></span></button>
+<button class="btn"><span><b>All Networks</b></span></button>
 </body>
 </html>
