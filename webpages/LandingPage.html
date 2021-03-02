@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>PY-FI</title>
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h1>Welcome to Py-Fi!</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <p style="color:white">
+        Here you can test the wifi speeds of various locations around campus.
+        Check which place has the better connection so you may resume your work (or at least spend the next few hours).
+    </p>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="LandingPage.css">
+
+<body>
+#The three tabs
+<div class="tabs">
+    #Compare with tab
+    <input class="pyTabs" name="tabs" tabindex="1" type="sections" id="tabOne" checked="checked">
+    <label class="label" for="tabOne">Compare With</label>
+    <div class="panel" tabindex="1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.</p>
+    </div>
+    #Single history tab
+    <input class="pyTabs" name="tabs" tabindex="1" type="sections" id="tabTwo">
+    <label class="label" for="tabTwo">Single History</label>
+    <div class="panel" tabindex="1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.</p>
+    </div>
+    All networks tab
+    <input class="pyTabs" name="tabs" tabindex="1" type="sections" id="tabThree">
+    <label class="label" for="tabThree">All Networks</label>
+    <div class="panel" tabindex="1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor dui eleifend enim rutrum maximus.</p>
+    </div>
+
+</div>
+#Break so I don't go into your code.
+<div>
+    <canvas id="myChart" width="400" height="400" style="background-color: white"></canvas>
+    <script src="charts.js"></script>
+
+</div>
+
+
+</body>
+</html>

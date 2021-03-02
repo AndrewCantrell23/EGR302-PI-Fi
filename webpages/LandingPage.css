@@ -1,0 +1,50 @@
+/* body design */
+body {
+    background-color: black;
+    text-align: center;
+}
+
+/* header design */
+h1 {
+    color: white;
+}
+
+/* button design */
+.btn {
+    border-radius: 4px; background-color: grey;  border: none; color: black;
+    text-align: center; font-size: 25px; padding: 14px;  width: 200px; transition: all 0.5s;
+    cursor: pointer; display: inline-block; margin: 5px;
+}
+.btn span {
+    cursor: pointer; display: inline-block; position: relative; transition: 0.5s;
+}
+.btn span:after {
+    content: '\00bb'; position: absolute; opacity: 0; top: 0; right: -40px; transition: 0.5s; color: black;
+}
+.btn:hover span {
+    padding-right: 25px;
+}
+.btn:hover span:after {
+    opacity: 1; right: 0;
+}
+
+/* tabs design */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 20px;
+    border-radius: 10px 10px 0 0;
+}
+.pyTabs {
+    position: absolute;
+    opacity: 0;
+}
+.label {
+    width: 100%;
+    padding: 22px 20px;
+    background: grey;
+    cursor: pointer;
+    font-weight: bold;
+    font-size 25px;
+    co
+}
