@@ -18,6 +18,8 @@ class DB:
         print("Creating database file at: ")
         print(self.db_file)
 
+
+
         with sqlite3.connect(self.db_file) as db:
             db.execute(
                 'create table Speeds ' +
