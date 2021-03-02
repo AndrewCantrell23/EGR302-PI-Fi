@@ -43,7 +43,7 @@ class DB:
 
         with sqlite3.connect(self.db_file) as db:
             db.execute(
-                'INSERT INTO SpeedDatabase (location, times, ping, down, up) VALUES '
+                'INSERT INTO SpeedDatabase (location, ping, down, up) VALUES '
                 '("point", null, 3, 4, 8)')
             time.sleep(.200)
         print("done")
