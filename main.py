@@ -16,6 +16,6 @@ ping = (str(arr[5]))[0:(len(str(arr[5])) - 1)]
 # for debugging purposes currently
 print(download)
 print(upload)
-print(ping)
+print(ping + "ms")
 
 #TODO add sql connect server and execute insert command
