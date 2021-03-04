@@ -18,13 +18,11 @@ class DB:
         print("Creating database file at: ")
         print(self.db_file)
 
-
-
         with sqlite3.connect(self.db_file) as db:
             db.execute(
                 'create table Speeds ' +
                 '(location text'
-                'times datetime default current_timestamp,'
+                'times datetime default current_timestamp NOT NULL,'
                 'ping INTEGER,'
                 'down REAL,'
                 'upload REAL,'
@@ -39,14 +37,14 @@ class DB:
         print('')
         print('Inserting base data')
 
-        if self.has_data():
-            print("Data already inserted, skpping")
-            return
+        # if self.has_data():
+        #     print("Data already inserted, skpping")
+        #     return
 
         with sqlite3.connect(self.db_file) as db:
             db.execute(
-                'INSERT INTO SpeedDatabase (location, ping, down, up) VALUES '
-                '("point", null, 3, 4, 8)')
+                'INSERT INTO SpeedDatabase (location, times, ping, down, up) VALUES '
+                '("lancer arms", datetime("now"), 3, 4, 8)')
             time.sleep(.200)
         print("done")
 
