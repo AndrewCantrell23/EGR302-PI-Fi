@@ -1,1 +1,1 @@
-# EGR302-PI-Thon
+# EGR302-PI-Fi
