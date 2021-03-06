@@ -1,4 +1,7 @@
 import os
+from DatabaseConnection import DB
+import pandas
+
 
 os.system('python speedtest-cli.py --json > myoutput.json')
 
@@ -18,4 +21,22 @@ print(download)
 print(upload)
 print(ping + "ms")
 
-#TODO add sql connect server and execute insert command
+# TODO add sql connect server and execute insert command
+
+
+def main():
+    base = DB()
+    data = {  # this here should be the json file
+        'Location': 'Smith',
+        'Times': '2021-01-01 12:01:00',
+        'Ping': 344,
+        'Down': 3.44,
+        'Upload': 23.99
+    }
+    base.enter_data(data=data)
+    results = base.extract(cols='*')
+    print(results.head())
+
+
+if __name__ == '__main__':
+    main()
