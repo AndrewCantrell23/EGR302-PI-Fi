@@ -1,14 +1,14 @@
-var ctx = document.getElementById('exampleChart1');
+var ctx = document.getElementById('exampleChart2');
 
 var dataFigures = [12, 19, 3, 5, 2, 3];
-var graphLabels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+var graphLabels = ['Andrew', 'Chris', 'Reuella', 'Roberto', 'Victor'];
 
-var exampleChart1 = new Chart(ctx, {
+var exampleChart2 = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: graphLabels,
             datasets: [{
-                label: '# of Votes',
+                label: 'Just for fun',
                 data: dataFigures,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
