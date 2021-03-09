@@ -4,7 +4,7 @@ var dataFigures = [12, 19, 3, 5, 2, 3];
 var graphLabels = ['Andrew', 'Chris', 'Reuella', 'Roberto', 'Victor'];
 
 var exampleChart2 = new Chart(ctx, {
-        type: 'bar',
+        type: 'radar',
         data: {
             labels: graphLabels,
             datasets: [{
