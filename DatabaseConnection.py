@@ -3,13 +3,13 @@ import pandas as pd
 
 
 class DB:
+
     """
     initiates connection to database
     self.conn is the connection to the database
     self.cursor is the actions that will be performed in the database
     NOTE: After cursor performs an action, the results will be stored in cursor
     """
-
     def __init__(self):
         self.conn = mariadb.connect(
             user='admindb',
@@ -27,7 +27,6 @@ class DB:
     If wanting all columns, enter '*'
     NOTE: Currently only works when extracting all data or from all columns
     """
-
     def extract(self, cols):
         self.cursor.execute(
             f"SELECT {cols} FROM SpeedTests;"
@@ -44,12 +43,8 @@ class DB:
             ping.append(Ping)
             down.append(Down)
             up.append(Upload)
-            # print(f"Location: {Location}\n"
-            #       f"Times: {Times}\n"
-            #       f"Ping: {Ping}\n"
-            #       f"Down: {Down}\n"
-            #       f"Upload: {Upload}")
-        results = pd.DataFrame(
+
+        return pd.DataFrame(
             {
                 'Location': local,
                 'Times': time,
@@ -58,7 +53,6 @@ class DB:
                 'Upload': up
             },
         )
-        return results.set_index('Location')
 
     """
     preq: json (dictionary || list of dictionaries)
