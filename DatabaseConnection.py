@@ -12,7 +12,7 @@ class DB:
     """
     def __init__(self):
         self.conn = mariadb.connect(
-            user='admindb',
+            user='reuella',
             password='kiwi',
             # host='192.168.86.29',
             host='192.168.86.37',
