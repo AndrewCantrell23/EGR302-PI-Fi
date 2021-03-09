@@ -1,6 +1,6 @@
 import os
 from DatabaseConnection import DB
-import pandas
+import pandas as pd
 
 
 os.system('python speedtest-cli.py --json > myoutput.json')
@@ -27,15 +27,21 @@ print(ping + "ms")
 def main():
     base = DB()
     data = {  # this here should be the json file
-        'Location': 'Smith',
-        'Times': '2021-01-01 12:01:00',
-        'Ping': 344,
-        'Down': 3.44,
-        'Upload': 23.99
+        'Location': 'Village',
+        'Times': '2021-03-06 21:45:10',
+        'Ping': 7,
+        'Down': 13.00,
+        'Upload': 14.57
     }
     base.enter_data(data=data)
+    # results stores the query results as a dataframe object
     results = base.extract(cols='*')
     print(results.head())
+
+    # print(type(results))
+    # results_json stores results in json format
+    # results_json = pd.DataFrame.to_json(results)
+    # print(results_json)
 
 
 if __name__ == '__main__':
