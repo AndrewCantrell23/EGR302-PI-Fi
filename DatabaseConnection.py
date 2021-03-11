@@ -14,8 +14,9 @@ class DB:
         self.conn = mariadb.connect(
             user='snake',
             password='kiwi',
-            host='192.168.86.37',
-            # host='192.168.86.29',
+            # host='192.168.86.37',
+            # this is the zero tier ip
+            host='10.147.17.9',
             port=3306,
             database='PyFi'
         )
