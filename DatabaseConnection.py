@@ -12,10 +12,10 @@ class DB:
     """
     def __init__(self):
         self.conn = mariadb.connect(
-            user='admindb',
+            user='snake',
             password='kiwi',
-            # host='192.168.86.29',
             host='192.168.86.37',
+            # host='192.168.86.29',
             port=3306,
             database='PyFi'
         )
@@ -37,11 +37,11 @@ class DB:
         ping = []
         down = []
         up = []
-        for (Location, Times, Ping, Down, Upload) in self.cursor:
+        for (Location, Times, Ping, Download, Upload) in self.cursor:
             local.append(Location)
             time.append(Times)
             ping.append(Ping)
-            down.append(Down)
+            down.append(Download)
             up.append(Upload)
 
         return pd.DataFrame(
@@ -49,7 +49,7 @@ class DB:
                 'Location': local,
                 'Times': time,
                 'Ping': ping,
-                'Down': down,
+                'Download': down,
                 'Upload': up
             },
         )
@@ -61,10 +61,9 @@ class DB:
     """
     def enter_data(self, data):
         location = data['Location']
-        times = data['Times']
         ping = data['Ping']
-        down = data['Down']
+        down = data['Download']
         up = data['Upload']
-        self.cursor.execute("INSERT INTO SpeedTests (Location, Times, Ping, Down, Upload) "
-                            "VALUES (?, ?, ?, ?, ?)", (location, times, ping, down, up))
+        self.cursor.execute("INSERT INTO SpeedTests (Location, Ping, Download, Upload) "
+                            "VALUES (?, ?, ?, ?)", (location, ping, down, up))
         self.conn.commit()
