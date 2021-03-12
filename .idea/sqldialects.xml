@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="remoteDeploymentFS://&lt;9a497ea6-5fe7-4a9d-9aec-88c583605f95&gt;/EGR302-Py-Fi /schema.sql" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/DatabaseConnection.py" dialect="GenericSQL" />
   </component>
 </project>
