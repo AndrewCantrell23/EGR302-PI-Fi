@@ -1,30 +1,12 @@
 import os
 from DatabaseConnection import DB
+import pandas as pd
 import json
-
-
-# f = open("myoutput.json", "r")
-
-# read from json file
-# line = f.readline()
-# arr = line.split()
-
-# assign speed variables
-# download = (str(arr[1]))[0:(len(arr[1]) - 1)]
-# upload = (str(arr[3]))[0:(len(str(arr[3])) - 1)]
-# ping = (str(arr[5]))[0:(len(str(arr[5])) - 1)]
-
-# for debugging purposes currently
-# print(download)
-# print(upload)
-# print(ping + "ms")
-
-# TODO add sql connect server and execute insert command
 
 
 def main():
     base = DB()
-    os.system('python speedtest-cli.py --json > myoutput.json')
+    os.system('python speedtest-cli.py --json > myoutput.json')    
 
     with open('myoutput.json') as f:
         unfiltered = json.load(f)
@@ -38,6 +20,7 @@ def main():
         'times': unfiltered['timestamp']
 
     }
+#     want is useless
     want = {  # this here should be the json file
         'Location': 'Point',
         'Ping': 50000,
@@ -49,11 +32,11 @@ def main():
     results = base.extract(cols='*')
     print(results)
 
-    # print(type(results))
-    # results_json stores results in json format
-    # results_json = pd.DataFrame.to_json(results)
-    # print(results_json)
-
+    results_json = results.to_json(orient='records')
+    with open(f'data.json', 'w', encoding='utf-8') as f:
+        json.dump(parsed, f, ensure_ascii=False, indent=4)
+    
+    
 
 if __name__ == '__main__':
     main()
