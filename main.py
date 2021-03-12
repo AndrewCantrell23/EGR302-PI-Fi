@@ -32,10 +32,10 @@ def main():
         'Download': 152.00,
         'Upload': 32.99
     }
-    base.enter_data(data=data)
+    # base.enter_data(data=data)
     # results stores the query results as a dataFrame object
     results = base.extract(cols='*')
-    print(results.head())
+    print(results)
 
     # print(type(results))
     # results_json stores results in json format
