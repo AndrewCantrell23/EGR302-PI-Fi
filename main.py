@@ -1,12 +1,11 @@
 import os
 from DatabaseConnection import DB
-import pandas as pd
 import json
 
 
 def main():
     base = DB()
-    os.system('python speedtest-cli.py --json > myoutput.json')    
+    os.system('python speedtest-cli.py --json > myoutput.json')
 
     with open('myoutput.json') as f:
         unfiltered = json.load(f)
@@ -20,6 +19,10 @@ def main():
         'times': unfiltered['timestamp']
 
     }
+
+
+
+
 #     want is useless
     want = {  # this here should be the json file
         'Location': 'Point',
@@ -34,8 +37,7 @@ def main():
 
     results_json = results.to_json(orient='records')
     with open(f'data.json', 'w', encoding='utf-8') as f:
-        json.dump(parsed, f, ensure_ascii=False, indent=4)
-    
+        json.dump(results_json, f, ensure_ascii=False, indent=4)
     
 
 if __name__ == '__main__':
