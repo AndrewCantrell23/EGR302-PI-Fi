@@ -88,3 +88,7 @@ p {
     border-bottom: solid 2px 0;
   }
 }
+
+#nav-tabs {
+justify-content: center;
+}
