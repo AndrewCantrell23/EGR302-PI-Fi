@@ -1,7 +1,7 @@
 var ctx = document.getElementById('exampleChart1');
 
 var dataFigures = [152, 93.426, 134.624, 130.331, 12.45, 38.07];
-var graphLabels = ['Point', 'Laner Arms', 'Engineering', 'Point-B-Testing', 'Smith', 'Village'];
+var graphLabels = ['Point', 'Lancer Arms', 'Engineering', 'Point-B-Testing', 'Smith', 'Village'];
 
 var exampleChart1 = new Chart(ctx, {
         type: 'bar',

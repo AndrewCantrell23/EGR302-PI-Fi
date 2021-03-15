@@ -78,8 +78,8 @@
 <div>
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" id="v-pills-home" data-toggle="pill" href="#v-pills-Chart1" role="tab"
-               aria-controls="v-pills-home" aria-selected="true"> Single-Location selection </a>
+            <a class="nav-link active" id="v-pills-home" data-toggle="pill" href="#v-pills-tab1" role="tab"
+               aria-controls="v-pills-home" aria-selected="true"> Location Comparison </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="v-pills-profile" data-toggle="pill" href="#v-pills-Chart2" role="tab"
@@ -98,39 +98,42 @@
 <div class="col-6">
     <div class="tab-content" id="v-pills-tabContent">
         <!-- chart1 -->
-        <div class="tab-pane fade show active" id="v-pills-Chart1" role="tabpanel" aria-labelledby="v-pills-home-tab">
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-            <canvas id="exampleChart1" width="600" height="600" style="background-color: #f0f8ff"></canvas>
+        <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <div class="chart-selection-buttons">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
+
+                <canvas id="exampleChart1" width="600" height="600" style="background-color: #f0f8ff"></canvas>
                 <!-- dropdown button -->
                 <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <!-- class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            href="#dropdown-box" data-bs-toggle="dropdown" aria-expanded="false"
-                            aria-controls="dropdown-box"> -->
-                        Dropdown button
-                    </button>
 
-                    <div class="dropdown-menu"> <!-- id="dropdown-box" aria-labelledby="dropdownMenuButton1" > -->
-                        <a class="dropdown-item" href="exampleChart1.js">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                    <button type="button" class="btn btn-outline-secondary">Ping Wifi</button>
+
+                    <button type="button" class="btn btn-outline-secondary" href = "#v-pills-Chart2">Ping Wifi</button>
                 </div>
             </div>
         </div>
         <!-- chart2 -->
         <div class="tab-pane fade" id="v-pills-Chart2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-            <canvas id="exampleChart2" width="800" height="800" style="background-color: #f0f8ff"></canvas>
+            <canvas id="exampleChart3" width="600" height="600" style="background-color: aliceblue"></canvas>
+
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Dropdown button
+            </button>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#chart1">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+
         </div>
         <!-- chart3 -->
-        <div class="tab-pane fade" id="v-pills-Chart3" role="tabpanel" aria-labelledby="v-pills-messages-tab">creator
+        <div class="tab-pane fade" id="v-pills-Chart3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <canvas id="exampleChart2" width="600" height="600" style="background-color: #f0f8ff"></canvas>
         </div>
     </div>
 </div>
-</div>
+
 
 
 <!-- Tito stuff
@@ -223,9 +226,9 @@ end of Tito stuff-->
 <div>
     <!--    <canvas id="exampleChart1" width="800" height="800" style="background-color: aliceblue"></canvas> &ndash;&gt;-->
     <!--    <canvas id="exampleChart2" width="900" height="400" style="background-color: aliceblue"></canvas>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="exampleChart3.js"></script>
+    <script src="exampleChart1.js"></script>
     <script src="exampleChart2.js"></script>
+    <script src="exampleChart3.js"></script>
 </div>
 
 
