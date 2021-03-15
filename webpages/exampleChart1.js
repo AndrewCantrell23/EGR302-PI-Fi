@@ -1,14 +1,14 @@
 var ctx = document.getElementById('exampleChart1');
 
-var dataFigures = [12, 19, 3, 5, 2, 3];
-var graphLabels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+var dataFigures = [152, 93.426, 134.624, 130.331, 12.45, 38.07];
+var graphLabels = ['Point', 'Laner Arms', 'Engineering', 'Point-B-Testing', 'Smith', 'Village'];
 
 var exampleChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: graphLabels,
             datasets: [{
-                label: '# of Votes',
+                label: 'Speed in Mbps',
                 data: dataFigures,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
