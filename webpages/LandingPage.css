@@ -18,6 +18,13 @@ p {
   font-size: 20px;
   line-height: 1.5;
 }
+/* Canvas design */
+ .border {
+border-style: double;
+border-width: 5px;
+border: black;
+}
+
 /* tabs design */
 * {
   box-sizing: border-box;
