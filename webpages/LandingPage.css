@@ -18,6 +18,13 @@ p {
   font-size: 20px;
   line-height: 1.5;
 }
+/* Canvas design */
+ .border {
+border-style: double;
+border-width: 5px;
+border: black;
+}
+
 /* tabs design */
 * {
   box-sizing: border-box;
@@ -87,4 +94,8 @@ p {
     border-radius: 10px 10px 0 0;
     border-bottom: solid 2px 0;
   }
+}
+
+#nav-tabs {
+justify-content: center;
 }

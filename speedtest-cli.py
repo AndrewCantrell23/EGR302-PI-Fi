@@ -24,7 +24,7 @@ import errno
 import signal
 import socket
 import timeit
-import datetime
+from datetime import datetime, timezone
 import platform
 import threading
 import xml.parsers.expat
@@ -944,7 +944,7 @@ class SpeedtestResults(object):
         self.client = client or {}
 
         self._share = None
-        self.timestamp = '%sZ' % datetime.datetime.utcnow().isoformat()
+        self.timestamp = '%sZ' % datetime.now(timezone.utc).astimezone().isoformat()
         self.bytes_received = 0
         self.bytes_sent = 0
 

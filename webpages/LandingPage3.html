@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <title>PY-FI</title>
+</head>
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <h1>Welcome to Py-Fi! 3</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h2 style="color:white">
+        Here you can test the wifi speeds of various locations around campus.
+        Check which place has the best connection so you may resume your work in a place with a stable connection.
+    </h2>
+</div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="LandingPage.css">
+
+<!-- <div title="Navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="LandingPage3.html">PyFi-Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="AboutMe.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="AboutMe.html">About me</a></li>
+                            <li><a class="dropdown-item" href="#">Action B</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+</div> -->
+
+
+<!-- works on a basic level -->
+<div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="v-pills-home" data-toggle="pill" href="#v-pills-tab1" role="tab"
+               aria-controls="v-pills-home" aria-selected="true"> Location Comparison </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="v-pills-profile" data-toggle="pill" href="#v-pills-Chart2" role="tab"
+               aria-controls="v-pills-profile" aria-selected="false"> Location History </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="v-pills-messages" data-toggle="pill" href="#v-pills-Chart3" role="tab"
+               aria-controls="v-pills-messages" aria-selected="false">About Me</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
+</div>
+
+<div class="col-6">
+    <div class="tab-content" id="v-pills-tabContent">
+        <!-- chart1 -->
+        <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="chart-selection-buttons">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+
+
+                <canvas id="exampleChart1" width="600" height="600" style="background-color: #f0f8ff"></canvas>
+                <!-- dropdown button -->
+                    <button type="button" class="btn btn-outline-primary" href = "#">Ping Wifi</button>
+            </div>
+        </div>
+        <!-- chart2 -->
+        <div class="tab-pane fade" id="v-pills-Chart2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+            <canvas id="exampleChart3" width="600" height="600" style="background-color: aliceblue"></canvas>
+
+            <div class="dropdown">
+
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Ping Location
+                </button>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#chart1">Engineering</a>
+                    <a class="dropdown-item" href="#">Lancer Arms</a>
+                    <a class="dropdown-item" href="#">Point</a>
+                    <a class="dropdown-item" href="#">Smith</a>
+                    <a class="dropdown-item" href="#">UP</a>
+                    <a class="dropdown-item" href="#">Village</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- chart3 -->
+        <div class="tab-pane fade" id="v-pills-Chart3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <canvas id="exampleChart2" width="600" height="600" style="background-color: #f0f8ff"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Tito stuff
+<div class="row">
+    <div class="col-1">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-portfolio" role="tab" aria-controls="v-pills-home" aria-selected="true">Portfolio</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-stats" role="tab" aria-controls="v-pills-profile" aria-selected="false">Stats</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-creator" role="tab" aria-controls="v-pills-messages" aria-selected="false">About Creator</a>
+        </div>
+    </div>
+
+    Hidden Content
+    <div class="col-6">
+        <div class="tab-content" id="v-pills-tabContent">
+            portfolio
+            <div class="tab-pane fade show active" id="v-pills-portfolio" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+                <canvas id="canvas"></canvas>
+                <script>
+                    // const jata = require("../json data/json top five.json");
+                    // var data = readFile()
+                    var jsonfile = {
+                        "jsonarray": [{
+                            "artists": "Remi Wolf",
+                            "followers": 108418
+                        }, {
+                            "artists": "The Strokes",
+                            "followers": 3618649
+                        }, {
+                            "artists": "Gorillaz",
+                            "followers": 6643844
+                        }, {
+                            "artists": "Arctic Monkeys",
+                            "followers": 11164485
+                        }, {
+                            "artists": "Kendrick Lamar",
+                            "followers": 16720856
+                        }]
+                    };
+                    var labels = jsonfile.jsonarray.map(function(e) {
+                        return e.artists;
+                    });
+                    var data = jsonfile.jsonarray.map(function(e) {
+                        return e.followers;
+                    });
+
+                    var ctx = canvas.getContext('2d');
+                    var config = {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Your Top Artists',
+                                data: data,
+                                backgroundColor: [
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        }
+                    };
+
+                    var chart = new Chart(ctx, config);
+                </script>
+
+            </div>
+            stats
+            <div class="tab-pane fade" id="v-pills-stats" role="tabpanel" aria-labelledby="v-pills-profile-tab">stats</div>
+            creator
+            <div class="tab-pane fade" id="v-pills-creator" role="tabpanel" aria-labelledby="v-pills-messages-tab">creator</div>
+        </div>
+    </div>
+</div>
+
+end of Tito stuff-->
+
+<div>
+    <!--    <canvas id="exampleChart1" width="800" height="800" style="background-color: aliceblue"></canvas> &ndash;&gt;-->
+    <!--    <canvas id="exampleChart2" width="900" height="400" style="background-color: aliceblue"></canvas>-->
+    <script src="exampleChart1.js"></script>
+    <script src="exampleChart2.js"></script>
+    <script src="exampleChart3.js"></script>
+</div>
+
+
+</body>
+</html>
