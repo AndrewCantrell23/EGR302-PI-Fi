@@ -1,6 +1,7 @@
 import os
 from DatabaseConnection import DB
 import json
+from datetime import datetime
 
 
 def main():
@@ -12,7 +13,7 @@ def main():
 
     # TODO: Download and Upload values are too big for the database requirement
     data = {
-        'Location': 'Lancer Arms',
+        'Location': 'AAA',
         'Download': unfiltered['download']/1000000,
         'Ping': unfiltered['ping'],
         'Upload': unfiltered['upload']/1000000,
@@ -20,6 +21,13 @@ def main():
 
     }
 
+    time = data['times'][11:23] + "Z"
+    print(time)
+    d = datetime.strptime(time, "%H:%M:%S.%fZ")
+    print(d)
+    d.strftime("%I:%M %p")
+    print("---------------")
+    print(d)
     # want is useless
     want = {  # this here should be the json file
         'Location': 'Point',
@@ -29,10 +37,11 @@ def main():
     }
     base.enter_data(data=data)
     # results stores the query results as a dataFrame object
+
     for item in data:
         print(f"{item}: {data[item]}")
 
-    print("DATABASE STUFF")
+    print("\n\nDATABASE STUFF")
 
     results = base.extract(cols='*')
     print(results)
