@@ -1,6 +1,6 @@
 /* body design */
 body {
-    background-color: black;
+    background-color: #002554;
     text-align: center;
      padding: 30px 20px;
 }
@@ -10,6 +10,7 @@ h1 {
     color: white;
 }
 h2 {
+    color: #A37400;
     font-size: 18px;
 }
 /* paragraph design */
@@ -25,7 +26,7 @@ border-width: 5px;
 border: black;
 }
 
-/* tabs design */
+/* ----tabs design - Put of old tabs, this doesn't work----
 * {
   box-sizing: border-box;
 }
@@ -95,7 +96,7 @@ border: black;
     border-bottom: solid 2px 0;
   }
 }
-
+*/
 #nav-tabs {
 justify-content: center;
 }
