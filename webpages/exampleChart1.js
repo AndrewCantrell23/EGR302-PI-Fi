@@ -39,6 +39,13 @@ var exampleChart1 = new Chart(ctx, {
                     }
                 }]
             }
+        },
+        style: {
+            display: "block"
+
         }
     }
+
 );
+
+
