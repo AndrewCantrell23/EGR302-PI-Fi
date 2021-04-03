@@ -13,21 +13,21 @@ def main():
 
     # TODO: Download and Upload values are too big for the database requirement
     data = {
-        'Location': 'AAA',
+        'Location': 'AAAAAAAABBBBBB',
         'Download': unfiltered['download']/1000000,
         'Ping': unfiltered['ping'],
-        'Upload': unfiltered['upload']/1000000,
-        'times': unfiltered['timestamp']
+        'Upload': unfiltered['upload']/1000000
+        # 'times': unfiltered['timestamp']
 
     }
 
-    time = data['times'][11:23] + "Z"
-    print(time)
-    d = datetime.strptime(time, "%H:%M:%S.%fZ")
-    print(d)
-    d.strftime("%I:%M %p")
-    print("---------------")
-    print(d)
+    # time = data['times'][11:23] + "Z"
+    #     # print(time)
+    #     # d = datetime.strptime(time, "%H:%M:%S.%fZ")
+    #     # print(d)
+    #     # d.strftime("%I:%M %p")
+    #     # print("---------------")
+    #     # print(d)
     # want is useless
     want = {  # this here should be the json file
         'Location': 'Point',

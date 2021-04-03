@@ -55,6 +55,36 @@ class DB:
             },
         )
 
+    def point(self, cols):
+        self.cursor.execute(
+            f"SELECT {cols} "
+            f"FROM SpeedTests"
+            f"WHERE Time >= (current_timestamp - '02')"  # find how to subtract 2 hours
+            f"LIMIT 5;"  # get the top 5 results
+        )
+        self.conn.commit()
+        local = []
+        time = []
+        ping = []
+        down = []
+        up = []
+        for (Location, Times, Ping, Download, Upload) in self.cursor:
+            local.append(Location)
+            time.append(Times)
+            ping.append(Ping)
+            down.append(Download)
+            up.append(Upload)
+
+        return pd.DataFrame(
+            {
+                'Location': local,
+                'Times': time,
+                'Ping': ping,
+                'Download': down,
+                'Upload': up
+            },
+        )
+
     """
     preq: json (dictionary || list of dictionaries)
     Enters data into the database
