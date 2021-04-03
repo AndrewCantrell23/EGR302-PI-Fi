@@ -57,10 +57,11 @@ class DB:
 
     def point(self, cols):
         self.cursor.execute(
-            f"SELECT {cols} "
+            f"SELECT (?) "
             f"FROM SpeedTests"
-            f"WHERE Time >= (current_timestamp - '02')"  # find how to subtract 2 hours
-            f"LIMIT 5;"  # get the top 5 results
+            f"WHERE Time >= "
+                f"(SELECT DATE_SUB(Time, INTERVAL 2 HOUR))"  # find how to subtract 2 hours 2021-03-06 21:45:10
+            f"LIMIT 5;", cols  # get the top 5 results
         )
         self.conn.commit()
         local = []
