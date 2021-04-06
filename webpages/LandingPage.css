@@ -7,7 +7,7 @@ body {
 
 /* header design */
 h1 {
-    color: white;
+    color: #ffffff;
 }
 h2 {
     color: #A37400;
@@ -25,6 +25,8 @@ border-style: double;
 border-width: 5px;
 border: black;
 }
+ /* footer design */
+
 
 /* ----tabs design - Put of old tabs, this doesn't work----
 * {
@@ -40,6 +42,7 @@ border: black;
     flex-wrap: wrap;
     margin: 0 auto 20px;
     border-radius: 10px 10px 0 0;
+
 }
 .pyTabs {
     position: absolute;
@@ -96,7 +99,8 @@ border: black;
     border-bottom: solid 2px 0;
   }
 }
-*/
+
 #nav-tabs {
 justify-content: center;
 }
+*/
