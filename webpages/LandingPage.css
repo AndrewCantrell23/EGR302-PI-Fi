@@ -25,82 +25,8 @@ border-style: double;
 border-width: 5px;
 border: black;
 }
- /* footer design */
+ /* navbar design*/
+ .nav-text {
+  
+ }
 
-
-/* ----tabs design - Put of old tabs, this doesn't work----
-* {
-  box-sizing: border-box;
-}
-
-*:focus, input:focus + label {
-  outline: none;
-  box-shadow: inset 0 0 0 5px white;
-}
-.tabs {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto 20px;
-    border-radius: 10px 10px 0 0;
-
-}
-.pyTabs {
-    position: absolute;
-    opacity: 0;
-}
-.label {
-    width: 15%;
-    padding: 20px 20px;
-    background: grey;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 25px;
-    color: black;
-    transition: background .3s, color .3s;
-    border: none;
-    border-radius: 0;
-    text-align: center;
-    margin:0 auto;
-}
-.label:hover {
-    background: white;
-}
-.label:active {
-    background: white;
-}
-.pyTabs:checked + .label {
-    background: grey;
-    color: white;
-    border-top: solid 2px grey;
-    border-left: solid 2px grey;
-    border-right: solid 2px grey;
-    border-bottom: none;
-}
-.panel {
-    display: none;
-    padding: 20px 30px 30px;
-    background: white;
-    width: 100%;
-    border-left: solid 5px grey;
-    border-right: solid 5px grey;
-    border-bottom: solid 5px grey;
-}
-.pyTabs:checked + .label + .panel {
-    display: block;
-}
-@media (min-width: 500px) {
-  .panel {
-    order: 99;
-  }
-
-  .label {
-    width: 33.33%;
-    border-radius: 10px 10px 0 0;
-    border-bottom: solid 2px 0;
-  }
-}
-
-#nav-tabs {
-justify-content: center;
-}
-*/
