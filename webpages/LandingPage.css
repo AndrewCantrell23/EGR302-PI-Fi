@@ -1,15 +1,16 @@
 /* body design */
 body {
-    background-color: black;
+    background-color: #002554;
     text-align: center;
      padding: 30px 20px;
 }
 
 /* header design */
 h1 {
-    color: white;
+    color: #ffffff;
 }
 h2 {
+    color: #A37400;
     font-size: 18px;
 }
 /* paragraph design */
@@ -24,8 +25,10 @@ border-style: double;
 border-width: 5px;
 border: black;
 }
+ /* footer design */
 
-/* tabs design */
+
+/* ----tabs design - Put of old tabs, this doesn't work----
 * {
   box-sizing: border-box;
 }
@@ -39,6 +42,7 @@ border: black;
     flex-wrap: wrap;
     margin: 0 auto 20px;
     border-radius: 10px 10px 0 0;
+
 }
 .pyTabs {
     position: absolute;
@@ -99,3 +103,4 @@ border: black;
 #nav-tabs {
 justify-content: center;
 }
+*/
