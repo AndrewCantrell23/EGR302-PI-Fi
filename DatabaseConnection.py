@@ -3,13 +3,16 @@ import pandas as pd
 
 
 class DB:
-
     """
     initiates connection to database
     self.conn is the connection to the database
     self.cursor is the actions that will be performed in the database
     NOTE: After cursor performs an action, the results will be stored in cursor
+    NOTE: 10.147.17.9
+          ubuntu
+          R2017ocky!
     """
+
     def __init__(self):
         self.conn = mariadb.connect(
             user='snake',
@@ -28,9 +31,42 @@ class DB:
     If wanting all columns, enter '*'
     NOTE: Currently only works when extracting all data or from all columns
     """
+
     def extract(self, cols):
         self.cursor.execute(
-            f"SELECT {cols} FROM SpeedTests;"
+            "SELECT (?) FROM SpeedTests;", cols
+        )
+        self.conn.commit()
+        local = []
+        time = []
+        ping = []
+        down = []
+        up = []
+        for (Location, Times, Ping, Download, Upload) in self.cursor:
+            local.append(Location)
+            time.append(Times)
+            ping.append(Ping)
+            down.append(Download)
+            up.append(Upload)
+
+        return pd.DataFrame(
+            {
+                'Location': local,
+                'Times': time,
+                'Ping': ping,
+                'Download': down,
+                'Upload': up
+            },
+        )
+
+    def loc(self, loc):
+        self.cursor.execute(
+            "SELECT * "
+            "FROM SpeedTests "
+            "WHERE Location = (?) "
+            "AND CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
+            "ORDER BY Times DESC"
+            "LIMIT 5;", loc
         )
         self.conn.commit()
         local = []
@@ -60,6 +96,7 @@ class DB:
     Enters data into the database
     NOTE: Will likely need editing when actual json objects are passed in
     """
+
     def enter_data(self, data):
         location = data['Location']
         ping = data['Ping']
