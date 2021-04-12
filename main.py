@@ -6,33 +6,33 @@ from datetime import datetime
 
 def main():
     base = DB()
-    os.system('python speedtest-cli.py --json > myoutput.json')
-
-    with open('myoutput.json') as f:
-        unfiltered = json.load(f)
-
-    # # TODO: Download and Upload values are too big for the database requirement
-    data = {
-        'Location': 'Points',
-        'Download': unfiltered['download']/1000000,
-        'Ping': unfiltered['ping'],
-        'Upload': unfiltered['upload']/1000000
-        # 'times': unfiltered['timestamp']
-
-    }
+    # os.system('python speedtest-cli.py --json > myoutput.json')
+    #
+    # with open('myoutput.json') as f:
+    #     unfiltered = json.load(f)
+    #
+    # # # TODO: Download and Upload values are too big for the database requirement
+    # data = {
+    #     'Location': 'Points',
+    #     'Download': unfiltered['download']/1000000,
+    #     'Ping': unfiltered['ping'],
+    #     'Upload': unfiltered['upload']/1000000
+    #     # 'times': unfiltered['timestamp']
+    #
+    # }
 
     # want is useless
-    # want = {  # this here should be the json file
-    #     'Location': 'Points',
-    #     'Ping': 50000,
-    #     'Download': 152.0000,
-    #     'Upload': 32.90009
-    # }
-    base.enter_data(data=data)
+    want = {  # this here should be the json file
+        'Location': 'Points',
+        'Ping': 170,
+        'Download': 420.0000,
+        'Upload': 37.90009
+    }
+    base.enter_data(data=want)
     # results stores the query results as a dataFrame object
 
-    for item in data:
-        print(f"{item}: {data[item]}")
+    for item in want:
+        print(f"{item}: {want[item]}")
 
     print("\n\nDATABASE STUFF")
 
@@ -44,12 +44,12 @@ def main():
     with open(f'data.json', 'w', encoding='utf-8') as f:
         json.dump(parsed, f, ensure_ascii=False, indent=4)
 
-    point_results = base.loc(cols='*')
-    print(point_results)
+    specific_results = base.loc(loc='Points')
+    print(specific_results)
 
-    point_results_json = point_results.to_json(orient='records', date_format='iso')
-    parsed = json.loads(point_results_json)
-    with open(f'point data.json', 'w', encoding='utf-8') as f:
+    specific_json = specific_results.to_json(orient='records', date_format='iso')
+    parsed = json.loads(specific_json)
+    with open(f'specific data.json', 'w', encoding='utf-8') as f:
         json.dump(parsed, f, ensure_ascii=False, indent=4)
     
 
