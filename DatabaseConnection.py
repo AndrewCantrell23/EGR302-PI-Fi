@@ -34,7 +34,10 @@ class DB:
 
     def extract(self, cols):
         self.cursor.execute(
-            "SELECT (?) FROM SpeedTests;", cols
+            f"SELECT {cols} "
+            f"FROM SpeedTests "
+            # f"WHERE CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
+            f"LIMIT 5;"
         )
         self.conn.commit()
         local = []
@@ -63,10 +66,10 @@ class DB:
         self.cursor.execute(
             "SELECT * "
             "FROM SpeedTests "
-            "WHERE Location = (?) "
-            "AND CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
-            "ORDER BY Times DESC"
-            "LIMIT 5;", loc
+            f"WHERE Location = '{loc}' "
+            # "AND CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
+            "ORDER BY Times DESC "
+            "LIMIT 5;"
         )
         self.conn.commit()
         local = []
