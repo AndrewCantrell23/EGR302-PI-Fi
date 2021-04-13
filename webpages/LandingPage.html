@@ -20,12 +20,12 @@
 <div class="container">
     <div class="row">
         <div class="col align-self-center">
-            <h1>Welcome to Py-Fi!</h1>
+            <h1>Welcome to Py-Fi! </h1>
         </div>
     </div>
 </div>
 <div class="container">
-    <h2 style="color:white">
+    <h2>
         Here you can test the wifi speeds of various locations around campus.
         Check which place has the best connection so you may resume your work in a place with a stable connection.
     </h2>
@@ -39,16 +39,16 @@
 <div>
     <ul class="nav nav-tabs nav-fill mb-3">
         <li class="nav-item">
-            <a class="nav-link active" id="v-pills-home" data-toggle="pill" href="#v-pills-tab1" role="tab"
+            <a class="nav-link active" id="v-pills-home" data-mdb-toggle="pill" href="#v-pills-tab1" role="tab"
                aria-controls="v-pills-home" aria-selected="true"> Location Comparison </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="v-pills-profile" data-toggle="pill" href="#v-pills-Chart2" role="tab"
+            <a class="nav-link" id="v-pills-profile" data-mdb-toggle="pill" href="#v-pills-Chart2" role="tab"
                aria-controls="v-pills-profile" aria-selected="false"> Location History </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="v-pills-messages" data-toggle="pill" href="#v-pills-Chart3" role="tab"
-               aria-controls="v-pills-messages" aria-selected="false">About Me</a>
+            <a class="nav-link" id="ex2-pills-3" data-mdb-toggle="pill" href="AboutMe.html" role="tab"
+               aria-controls="ex2-pills-3" aria-selected="false">About Us</a>
         </li>
 
     </ul>
@@ -56,7 +56,7 @@
 
 <div class="col-6">
     <div class="tab-content" id="v-pills-tabContent">
-        <!-- chart1 -->
+        <!-- Location Comparison with chart1 -->
         <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-home-tab">
             <div class="chart-selection-buttons">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
@@ -67,7 +67,7 @@
                 </div>
 
                 <!-- ping button -->
-                <button type="button" class="btn btn-outline-primary" onclick="toggle('single-location-chart')">Ping
+                <button type="button" class="btn btn-outline-primary" onclick="toggle('single-location-chart')" style="color: #ffffff">Ping
                     Wifi
                 </button>
 
@@ -82,8 +82,8 @@
 
             </div>
         </div>
-        <!-- chart2 -->
-        <div class="tab-pane fade" id="v-pills-Chart2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <!-- Location History inside is chart2 -->
+        <div class="tab-pane fade align-self-stretch" id="v-pills-Chart2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
             <canvas id="exampleChart3" width="600" height="600" style="background-color: aliceblue"></canvas>
 
             <div class="dropdown">
@@ -103,9 +103,9 @@
             </div>
 
         </div>
-        <!-- chart3 -->
-        <div class="tab-pane fade" id="v-pills-Chart3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-            <canvas id="exampleChart2" width="600" height="600" style="background-color: #f0f8ff"></canvas>
+        <!--About Us -->
+        <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-pills-3">
+
         </div>
     </div>
 </div>
@@ -120,7 +120,7 @@
 
 </body>
 <footer>
-    <a href="https://docs.google.com/forms/d/18XNeAC3HAb1RcHvKWYE434qHAEXQRWqMzFIeCrLhoOw/">Have a problem or
+    <a href="https://docs.google.com/forms/d/18XNeAC3HAb1RcHvKWYE434qHAEXQRWqMzFIeCrLhoOw/" style = "color: #ffffff">Have a problem or
         suggestion?</a>
 </footer>
 </html>
