@@ -32,11 +32,10 @@ class DB:
     NOTE: Currently only works when extracting all data or from all columns
     """
 
-    def extract(self, cols):
+    def extract_all(self, cols):
         self.cursor.execute(
             f"SELECT {cols} "
             f"FROM SpeedTests "
-            # f"WHERE CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
             f"LIMIT 5;"
         )
         self.conn.commit()
@@ -67,9 +66,49 @@ class DB:
             "SELECT * "
             "FROM SpeedTests "
             f"WHERE Location = '{loc}' "
-            # "AND CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
             "ORDER BY Times DESC "
             "LIMIT 5;"
+        )
+        self.conn.commit()
+        local = []
+        time = []
+        ping = []
+        down = []
+        up = []
+        for (Location, Times, Ping, Download, Upload) in self.cursor:
+            local.append(Location)
+            time.append(Times)
+            ping.append(Ping)
+            down.append(Download)
+            up.append(Upload)
+
+        return pd.DataFrame(
+            {
+                'Location': local,
+                'Times': time,
+                'Ping': ping,
+                'Download': down,
+                'Upload': up
+            },
+        )
+
+    def cream_of_the_crop(self):
+        self.cursor.execute(
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Lancer Arms' "
+            "ORDER BY Times DESC LIMIT 5) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Colony' "
+            "ORDER BY Times DESC LIMIT 5) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Point' "
+            "ORDER BY Times DESC LIMIT 5) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Smith' "
+            "ORDER BY Times DESC LIMIT 5);"
         )
         self.conn.commit()
         local = []
