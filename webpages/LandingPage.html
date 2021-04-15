@@ -8,12 +8,24 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
     <title>PY-FI</title>
 </head>
 <body>
@@ -78,6 +90,74 @@
                     } else {
                         x.style.display = "none";
                     }
+
+                    $.getJSON("JSON Samples\\specific_data.json", function(json) {
+                        json[0].Location;
+                        var ctx = document.getElementById('exampleChart1');
+
+                        var dataFigures = [];
+                        var graphLabels = [];
+
+                        // for(var i = 0; i < json.length; i++) { TODO for the second page
+                        //     if(json.[i].Location == input){
+                        //         dataFigures.push(json[i].Download);
+                        //         graphLabels.push(json[i].Time);
+                        //     }
+                        // }
+
+                        for(var i = 0; i < json.length; i++) {
+                            if(json)
+                            dataFigures.push(json[i].Download)
+                            graphLabels.push(json[i].Location)
+                        }
+
+                        var exampleChart2 = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: graphLabels,
+                                    datasets: [{
+                                        label: 'Speed in Mbps',
+                                        data: dataFigures,
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    maintainAspectRatio: false,
+                                    responsive: false,
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                },
+                                style: {
+                                    display: "block"
+
+                                }
+                            }
+
+                        );
+                    });
+
+
                 }</script>
 
             </div>
