@@ -105,9 +105,6 @@ class DB:
         )
 
 
-
-
-
     """
     preq: json (dictionary || list of dictionaries)
     Enters data into the database
