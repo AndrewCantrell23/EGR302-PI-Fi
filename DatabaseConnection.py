@@ -92,23 +92,23 @@ class DB:
             },
         )
 
-    def cream_of_the_crop(self):
+    def cream_of_the_crop(self, hours):
         self.cursor.execute(
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Lancer Arms' "
-            "ORDER BY Times DESC LIMIT 5) "
+            f"ORDER BY Times DESC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Colony' "
-            "ORDER BY Times DESC LIMIT 5) "
+            f"ORDER BY Times DESC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Point' "
-            "ORDER BY Times DESC LIMIT 5) "
+            f"ORDER BY Times DESC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Smith' "
-            "ORDER BY Times DESC LIMIT 5);"
+            f"ORDER BY Times DESC LIMIT {hours});"
         )
         self.conn.commit()
         local = []
