@@ -61,36 +61,7 @@ class DB:
             },
         )
 
-    def loc(self, loc):
-        self.cursor.execute(
-            "SELECT * "
-            "FROM SpeedTests "
-            f"WHERE Location = '{loc}' "
-            "ORDER BY Times DESC "
-            "LIMIT 5;"
-        )
-        self.conn.commit()
-        local = []
-        time = []
-        ping = []
-        down = []
-        up = []
-        for (Location, Times, Ping, Download, Upload) in self.cursor:
-            local.append(Location)
-            time.append(Times)
-            ping.append(Ping)
-            down.append(Download)
-            up.append(Upload)
 
-        return pd.DataFrame(
-            {
-                'Location': local,
-                'Times': time,
-                'Ping': ping,
-                'Download': down,
-                'Upload': up
-            },
-        )
 
     def cream_of_the_crop(self, hours):
         self.cursor.execute(
@@ -132,6 +103,10 @@ class DB:
                 'Upload': up
             },
         )
+
+
+
+
 
     """
     preq: json (dictionary || list of dictionaries)
