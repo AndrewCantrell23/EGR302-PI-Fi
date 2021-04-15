@@ -1,4 +1,4 @@
-$.getJSON("json data\\specific_data.json", function(json) {
+$.getJSON("json data\\data.json", function(json) {
     json[0].Location;
     var ctx = document.getElementById('exampleChart1');
 

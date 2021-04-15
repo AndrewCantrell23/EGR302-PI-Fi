@@ -91,7 +91,7 @@
                         x.style.display = "none";
                     }
 
-                    $.getJSON("JSON Samples\\specific_data.json", function(json) {
+                    $.getJSON("JSON Samples\\data.json", function(json) {
                         json[0].Location;
                         var ctx = document.getElementById('exampleChart1');
 
@@ -107,11 +107,11 @@
 
                         for(var i = 0; i < json.length; i++) {
                             if(json)
-                            dataFigures.push(json[i].Download)
-                            graphLabels.push(json[i].Location)
+                            dataFigures.push(json[i].Download);
+                            graphLabels.push(json[i].Location);
                         }
 
-                        var exampleChart2 = new Chart(ctx, {
+                        var exampleChart1 = new Chart(ctx, {
                                 type: 'bar',
                                 data: {
                                     labels: graphLabels,
