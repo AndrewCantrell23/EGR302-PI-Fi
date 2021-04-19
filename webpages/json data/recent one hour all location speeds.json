@@ -8,23 +8,23 @@
     },
     {
         "Location": "Colony",
-        "Times": "04/12/21 05:47:12 PM",
-        "Ping": 76,
-        "Download": 12.576,
-        "Upload": 2.859
+        "Times": "04/12/21 04:50:16 PM",
+        "Ping": 93,
+        "Download": 11.535,
+        "Upload": 2.304
     },
     {
         "Location": "Point",
-        "Times": "04/12/21 05:49:21 PM",
-        "Ping": 42,
-        "Download": 11.369,
-        "Upload": 2.395
+        "Times": "04/12/21 04:43:22 PM",
+        "Ping": 53,
+        "Download": 13.556,
+        "Upload": 2.785
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:46:20 PM",
-        "Ping": 52,
-        "Download": 14.368,
-        "Upload": 2.469
+        "Times": "04/12/21 05:42:12 PM",
+        "Ping": 74,
+        "Download": 11.62,
+        "Upload": 2.331
     }
 ]
