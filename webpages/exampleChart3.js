@@ -1,9 +1,9 @@
 var ctx = document.getElementById('exampleChart3');
 
-var dataFigures = [152, 93.426, 134.624, 12.45, 130.331, 38.07];
-var graphLabels = ['2:45:10', '10:30:58', '14:32:44', '18:30:50', '20:59:13', '23:20:05'];
+var dataFigures = [];
+var graphLabels = [];
 
-var exampleChart1 = new Chart(ctx, {
+var exampleChart3 = new Chart(ctx, {
         type: 'line',
         data: {
             labels: graphLabels,

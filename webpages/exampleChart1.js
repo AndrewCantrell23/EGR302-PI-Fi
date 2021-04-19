@@ -1,4 +1,4 @@
-$.getJSON("json data\\data.json", function(json) {
+$.getJSON("json data\\recent one hour all location speeds.json", function(json) {
     json[0].Location;
     var ctx = document.getElementById('exampleChart1');
 

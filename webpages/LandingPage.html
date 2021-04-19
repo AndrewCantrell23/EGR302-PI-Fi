@@ -17,15 +17,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-
-
-
-
-
-
-
-
-
     <title>PY-FI</title>
 </head>
 <body>
@@ -47,92 +38,188 @@
 <link rel="stylesheet" href="LandingPage.css">
 
 
-<!-- works on a basic level -->
+<!-- nav tabs -->
 <div>
     <ul class="nav nav-tabs nav-fill mb-3">
         <li class="nav-item">
-            <a class="nav-link active" id="v-pills-home" data-mdb-toggle="pill" href="#v-pills-tab1" role="tab"
-               aria-controls="v-pills-home" aria-selected="true"> Location Comparison </a>
+            <a class="nav-link active" id="v-pills-tab1-link" data-toggle="pill" href="#v-pills-tab1" role="tab"
+               aria-controls="v-pills-MultiLoc" aria-selected="true"> Location Comparison </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="v-pills-profile" data-mdb-toggle="pill" href="#v-pills-Chart2" role="tab"
-               aria-controls="v-pills-profile" aria-selected="false"> Location History </a>
+            <a class="nav-link" id="v-pills-tab2-link" data-toggle="pill" href="#v-pills-tab2" role="tab"
+               aria-controls="v-pills-SingleLoc" aria-selected="false"> Location History </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="ex2-pills-3" data-mdb-toggle="pill" href="AboutMe.html" role="tab"
-               aria-controls="ex2-pills-3" aria-selected="false">About Us</a>
-        </li>
+        <!--        <li class="nav-item">-->
+        <!--            <a class="nav-link" id="v-pills-messages" data-toggle="pill" href="#v-pills-Chart3" role="tab"-->
+        <!--               aria-controls="v-pills-messages" aria-selected="false">About Us</a>-->
+        <!--        </li>-->
 
     </ul>
 </div>
 
 <div class="col d-flex justify-content-center">
     <div class="tab-content" id="v-pills-tabContent">
-        <!-- Location Comparison with chart1 -->
-        <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+        <!-- Multiple Location Comparison -->
+        <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel" aria-labelledby="v-pills-MultiLoc-tab">
             <div class="chart-selection-buttons">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
-                <div id="single-location-chart" style = "display: none">
+                <div id="multi-location-chart" style="display: none">
                     <canvas id="exampleChart1" width="600" height="600"
                             style="background-color: #f0f8ff"></canvas>
                 </div>
 
                 <!-- ping button -->
-                <button type="button" class="btn btn-outline-primary" onclick="toggle('single-location-chart')" style="color: #ffffff">Ping
+                <button type="button" class="btn btn-outline-primary"
+                        onclick="generateMultiLocChart('multi-location-chart')" style="color: #ffffff">Ping
                     Wifi
                 </button>
 
-                <script>function toggle(chartDiv) {
+                <script>function generateMultiLocChart(chartDiv) {
                     var x = document.getElementById(chartDiv);
+
+                    // var otherChart = document.getElementById("single-location-chart");
+
+                    // otherChart.style.display = "none";
+
+
                     if (x.style.display === "none") {
                         x.style.display = "block";
+
+                        // $.getJSON("json data\\recent one hour all location speeds.json", function (json) {
+                        //
+                        //     var dataFigures = [];
+                        //     var graphLabels = [];
+                        //
+                        //
+                        //     for (var i = 0; i < json.length; i++) {
+                        //         dataFigures.push(json[i].Download);
+                        //         graphLabels.push(json[i].Location);
+                        //     }
+                        //
+                        //     var multiLocationInstant = new Chart(ctx, {
+                        //             type: 'bar',
+                        //             data: {
+                        //                 labels: graphLabels,
+                        //                 datasets: [{
+                        //                     label: 'Speed in Mbps',
+                        //                     data: dataFigures,
+                        //                     backgroundColor: [
+                        //                         'rgba(255, 99, 132, 0.2)',
+                        //                         'rgba(54, 162, 235, 0.2)',
+                        //                         'rgba(255, 206, 86, 0.2)',
+                        //                         'rgba(75, 192, 192, 0.2)',
+                        //                         'rgba(153, 102, 255, 0.2)',
+                        //                         'rgba(255, 159, 64, 0.2)'
+                        //                     ],
+                        //                     borderColor: [
+                        //                         'rgba(255, 99, 132, 1)',
+                        //                         'rgba(54, 162, 235, 1)',
+                        //                         'rgba(255, 206, 86, 1)',
+                        //                         'rgba(75, 192, 192, 1)',
+                        //                         'rgba(153, 102, 255, 1)',
+                        //                         'rgba(255, 159, 64, 1)'
+                        //                     ],
+                        //                     borderWidth: 1
+                        //                 }]
+                        //             },
+                        //             options: {
+                        //                 maintainAspectRatio: false,
+                        //                 responsive: false,
+                        //                 scales: {
+                        //                     yAxes: [{
+                        //                         ticks: {
+                        //                             beginAtZero: true
+                        //                         }
+                        //                     }]
+                        //                 }
+                        //             },
+                        //             style: {
+                        //                 display: "block"
+                        //
+                        //             }
+                        //         }
+                        //     );
+                        // });
+
+                        // x.style.visibility = "visible";
+                        // otherChart.style.visibility = "hidden";
+
                     } else {
                         x.style.display = "none";
                     }
 
-                    $.getJSON("JSON Samples\\data.json", function(json) {
-                        json[0].Location;
-                        var ctx = document.getElementById('exampleChart1');
 
-                        var dataFigures = [];
-                        var graphLabels = [];
+                }</script>
 
-                        // for(var i = 0; i < json.length; i++) { TODO for the second page
-                        //     if(json.[i].Location == input){
-                        //         dataFigures.push(json[i].Download);
-                        //         graphLabels.push(json[i].Time);
-                        //     }
-                        // }
+            </div>
+        </div>
 
-                        for(var i = 0; i < json.length; i++) {
-                            if(json)
-                            dataFigures.push(json[i].Download);
-                            graphLabels.push(json[i].Location);
-                        }
+        <!-- Single Location History -->
+        <div class="tab-pane fade" id="v-pills-tab2" role="tabpanel" aria-labelledby="v-pills-SingleLoc-tab"
+             onload="toggle('multi-location-chart')"> <!-- class="tab-pane fade align-self-stretch"-->
 
-                        var exampleChart1 = new Chart(ctx, {
-                                type: 'bar',
+            <div id="single-location-chart" style="display:none">
+                <canvas id="singleLocationOverTime" width="600" height="600" style="background-color: aliceblue"></canvas>
+            </div>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Ping Location
+                </button>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" onclick="generateSingleLocChart('Engineering', 'single-location-chart')">Engineering</a>
+                    <a class="dropdown-item" onclick="generateSingleLocChart('Lancer Arms', 'single-location-chart')">Lancer
+                        Arms</a>
+                    <a class="dropdown-item"
+                       onclick="generateSingleLocChart('Point', 'single-location-chart')">Point</a>
+                    <a class="dropdown-item"
+                       onclick="generateSingleLocChart('Smith', 'single-location-chart')">Smith</a>
+                    <a class="dropdown-item" onclick="generateSingleLocChart('UP', 'single-location-chart')">UP</a>
+                    <a class="dropdown-item" onclick="generateSingleLocChart('Village', 'single-location-chart')">Village</a>
+                </div>
+
+                <script>function generateSingleLocChart(location, chartDiv) {
+                    var ctx = document.getElementById('singleLocationOverTime');
+
+                    var x = document.getElementById(chartDiv);
+
+                    var otherChart = document.getElementById("multi-location-chart");
+
+                    // otherChart.style.display = "none";
+
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                        $.getJSON("json data\\recent five hours all location speeds.json", function (json) {
+
+
+                            var dataFigures = [];
+                            var graphLabels = [];
+
+                            for (var i = 0; i < json.length; i++) {
+                                if (json[i].Location === location) {
+                                    dataFigures.push(json[i].Download);
+
+
+                                    //TODO this is where to add the time once we make it PST
+                                    graphLabels.push(json[i].Times);
+                                }
+                            }
+
+                            var singleLocationOverTime = new Chart(ctx, {
+                                type: 'line',
                                 data: {
                                     labels: graphLabels,
                                     datasets: [{
-                                        label: 'Speed in Mbps',
+                                        label: 'Wifi Download Speed(in Mb/s) in ' + location + ' over the last 5 hours',
                                         data: dataFigures,
+                                        fill: false,
                                         backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
                                             'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
-                                            'rgba(75, 192, 192, 0.2)',
-                                            'rgba(153, 102, 255, 0.2)',
-                                            'rgba(255, 159, 64, 0.2)'
                                         ],
                                         borderColor: [
-                                            'rgba(255, 99, 132, 1)',
                                             'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)',
-                                            'rgba(75, 192, 192, 1)',
-                                            'rgba(153, 102, 255, 1)',
-                                            'rgba(255, 159, 64, 1)'
                                         ],
                                         borderWidth: 1
                                     }]
@@ -147,59 +234,49 @@
                                             }
                                         }]
                                     }
-                                },
-                                style: {
-                                    display: "block"
-
                                 }
-                            }
+                            });
+                        });
 
-                        );
-                    });
+                        // x.style.visibility = "visible";
+                        // otherChart.style.visibility = "hidden";
 
-
+                    } else {
+                        x.style.display = "none";
+                    }
                 }</script>
-
             </div>
         </div>
-        <!-- Location History inside is chart2 -->
-        <div class="tab-pane fade align-self-stretch" id="v-pills-Chart2" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-            <canvas id="exampleChart3" width="600" height="600" style="background-color: aliceblue"></canvas>
 
-            <div class="dropdown">
-
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Ping Location
-                </button>
-
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#chart1">Engineering</a>
-                    <a class="dropdown-item" href="#">Lancer Arms</a>
-                    <a class="dropdown-item" href="#">Point</a>
-                    <a class="dropdown-item" href="#">Smith</a>
-                    <a class="dropdown-item" href="#">UP</a>
-                    <a class="dropdown-item" href="#">Village</a>
-                </div>
-            </div>
-
-        </div>
         <!--About Us -->
-        <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-pills-3">
+        <div class="tab-pane fade" id="v-pills-Chart3" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+            <!--        <div class="tab-pane fade" id="ex2-pills-3-tab" role="tabpanel" aria-labelledby="ex2-pills-3">-->
 
+            <!--        </div>-->
         </div>
     </div>
 </div>
 
+<script>
+    function toggle(tabName) {
+        var x = document.getElementById(tabName);
+        x.style.display = 'none';
+    }
+</script>
 <div>
     <script src="exampleChart1.js"></script>
-    <script src="exampleChart2.js"></script>
-    <script src="exampleChart3.js"></script>
+    <!--    <script src="exampleChart2.js"></script>-->
+<!--    <script src="exampleChart3.js"></script>-->
 </div>
 
 
 </body>
 <footer>
-    <a href="https://docs.google.com/forms/d/18XNeAC3HAb1RcHvKWYE434qHAEXQRWqMzFIeCrLhoOw/" style = "color: #ffffff">Have a problem or
+    <a href="https://docs.google.com/forms/d/18XNeAC3HAb1RcHvKWYE434qHAEXQRWqMzFIeCrLhoOw/" style="color: #ffffff">Have
+        a problem or
         suggestion?</a>
+    <br>
+    <a href="AboutMe.html" style="color: #ffffff">About the creators</a>
+
 </footer>
 </html>
