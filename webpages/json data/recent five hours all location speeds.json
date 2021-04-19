@@ -1,24 +1,17 @@
 [
     {
         "Location": "Lancer Arms",
-        "Times": "04/12/21 05:48:44 PM",
-        "Ping": 57,
-        "Download": 13.6,
-        "Upload": 2.608
+        "Times": "04/12/21 04:46:45 PM",
+        "Ping": 108,
+        "Download": 10.974,
+        "Upload": 2.128
     },
     {
         "Location": "Lancer Arms",
-        "Times": "04/12/21 04:49:29 PM",
-        "Ping": 65,
-        "Download": 10.318,
-        "Upload": 2.395
-    },
-    {
-        "Location": "Lancer Arms",
-        "Times": "04/12/21 04:48:57 PM",
-        "Ping": 70,
-        "Download": 10.032,
-        "Upload": 2.213
+        "Times": "04/12/21 04:47:48 PM",
+        "Ping": 75,
+        "Download": 11.537,
+        "Upload": 2.462
     },
     {
         "Location": "Lancer Arms",
@@ -29,10 +22,17 @@
     },
     {
         "Location": "Lancer Arms",
-        "Times": "04/12/21 04:47:48 PM",
-        "Ping": 75,
-        "Download": 11.537,
-        "Upload": 2.462
+        "Times": "04/12/21 04:48:57 PM",
+        "Ping": 70,
+        "Download": 10.032,
+        "Upload": 2.213
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:49:29 PM",
+        "Ping": 65,
+        "Download": 10.318,
+        "Upload": 2.395
     },
     {
         "Location": "Colony",
