@@ -65,19 +65,19 @@ class DB:
         self.cursor.execute(
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Lancer Arms' "
-            f"ORDER BY Times DESC LIMIT {hours}) "
+            f"ORDER BY Times ASC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Colony' "
-            f"ORDER BY Times DESC LIMIT {hours}) "
+            f"ORDER BY Times ASC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Point' "
-            f"ORDER BY Times DESC LIMIT {hours}) "
+            f"ORDER BY Times ASC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
             "WHERE Location = 'Smith' "
-            f"ORDER BY Times DESC LIMIT {hours});"
+            f"ORDER BY Times ASC LIMIT {hours});"
         )
         self.conn.commit()
         local = []
