@@ -32,11 +32,10 @@ class DB:
     NOTE: Currently only works when extracting all data or from all columns
     """
 
-    def extract(self, cols):
+    def extract_all(self, cols):
         self.cursor.execute(
             f"SELECT {cols} "
             f"FROM SpeedTests "
-            # f"WHERE CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
             f"LIMIT 5;"
         )
         self.conn.commit()
@@ -62,14 +61,23 @@ class DB:
             },
         )
 
-    def loc(self, loc):
+    def cream_of_the_crop(self, hours):
         self.cursor.execute(
-            "SELECT * "
-            "FROM SpeedTests "
-            f"WHERE Location = '{loc}' "
-            # "AND CURTIME() <= ADDTIME(CURTIME(), '-12:0:0') "
-            "ORDER BY Times DESC "
-            "LIMIT 5;"
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Lancer Arms' "
+            f"ORDER BY Times ASC LIMIT {hours}) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Colony' "
+            f"ORDER BY Times ASC LIMIT {hours}) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Point' "
+            f"ORDER BY Times ASC LIMIT {hours}) "
+            "UNION ALL "
+            "(SELECT * FROM SpeedTests "
+            "WHERE Location = 'Smith' "
+            f"ORDER BY Times ASC LIMIT {hours});"
         )
         self.conn.commit()
         local = []

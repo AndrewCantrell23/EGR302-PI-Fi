@@ -1,10 +1,3 @@
-/* body design */
-body {
-    background-color: #002554;
-    text-align: center;
-     padding: 30px 20px;
-}
-
 /* header design */
 h1 {
     color: #ffffff;
@@ -13,20 +6,26 @@ h2 {
     color: #A37400;
     font-size: 18px;
 }
+
+/* body design */
+body {
+    background-color: #002554;
+    text-align: center;
+     padding: 30px 20px;
+}
+
 /* paragraph design */
 p {
   margin: 0 0 20px;
   font-size: 20px;
   line-height: 1.5;
 }
-/* Canvas design */
- .border {
-border-style: double;
-border-width: 5px;
-border: black;
+/* Footer design */
+footer {
+    font-size: 20px;
 }
- /* navbar design*/
- .nav-text {
-  
- }
+canvas {
+    Margin: 0 auto;
+    Vertical-align: middle;
+}
 

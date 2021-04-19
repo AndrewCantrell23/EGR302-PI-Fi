@@ -1,0 +1,142 @@
+[
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:46:45 PM",
+        "Ping": 108,
+        "Download": 10.974,
+        "Upload": 2.128
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:47:48 PM",
+        "Ping": 75,
+        "Download": 11.537,
+        "Upload": 2.462
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:48:24 PM",
+        "Ping": 59,
+        "Download": 12.222,
+        "Upload": 2.438
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:48:57 PM",
+        "Ping": 70,
+        "Download": 10.032,
+        "Upload": 2.213
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/12/21 04:49:29 PM",
+        "Ping": 65,
+        "Download": 10.318,
+        "Upload": 2.395
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/12/21 04:50:16 PM",
+        "Ping": 93,
+        "Download": 11.535,
+        "Upload": 2.304
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/12/21 04:50:49 PM",
+        "Ping": 86,
+        "Download": 9.071,
+        "Upload": 2.368
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/12/21 04:51:34 PM",
+        "Ping": 65,
+        "Download": 10.084,
+        "Upload": 2.218
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/12/21 05:10:48 PM",
+        "Ping": 68,
+        "Download": 10.902,
+        "Upload": 2.124
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/12/21 05:11:30 PM",
+        "Ping": 60,
+        "Download": 11.631,
+        "Upload": 2.603
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 04:43:22 PM",
+        "Ping": 53,
+        "Download": 13.556,
+        "Upload": 2.785
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 04:43:52 PM",
+        "Ping": 59,
+        "Download": 11.567,
+        "Upload": 2.736
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 04:44:22 PM",
+        "Ping": 67,
+        "Download": 12.563,
+        "Upload": 2.963
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 04:44:56 PM",
+        "Ping": 64,
+        "Download": 11.59,
+        "Upload": 2.71
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 04:45:26 PM",
+        "Ping": 73,
+        "Download": 11.547,
+        "Upload": 2.3
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:42:12 PM",
+        "Ping": 74,
+        "Download": 11.62,
+        "Upload": 2.331
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:43:12 PM",
+        "Ping": 60,
+        "Download": 12.871,
+        "Upload": 2.553
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:44:04 PM",
+        "Ping": 53,
+        "Download": 8.52,
+        "Upload": 2.506
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:44:50 PM",
+        "Ping": 73,
+        "Download": 11.81,
+        "Upload": 2.564
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:45:19 PM",
+        "Ping": 46,
+        "Download": 14.015,
+        "Upload": 2.364
+    }
+]
