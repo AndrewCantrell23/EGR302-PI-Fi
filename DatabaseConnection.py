@@ -61,8 +61,6 @@ class DB:
             },
         )
 
-
-
     def cream_of_the_crop(self, hours):
         self.cursor.execute(
             "(SELECT * FROM SpeedTests "
@@ -103,7 +101,6 @@ class DB:
                 'Upload': up
             },
         )
-
 
     """
     preq: json (dictionary || list of dictionaries)
