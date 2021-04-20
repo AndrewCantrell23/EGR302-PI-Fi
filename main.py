@@ -3,7 +3,8 @@ from DatabaseConnection import DB
 import json
 from datetime import datetime
 import pytz
-from crontab import CronTab
+from schedule import every, repeat, run_pending
+import time
 
 def change_timezone_to_pst(utc_datetime_object):
     pst = pytz.timezone("Us/Pacific")
@@ -17,23 +18,22 @@ def replace_datetime_formats(parsedList):
                 updated_date = change_timezone_to_pst(datetime_object)
                 speedtest_object.update({dictPair : updated_date})
 
-def main():
-    # cron = CronTab(tabfile='file.tab')
-    # job = cron.new(command="example", comment="printing")
-    # job.minute.every(1)
-    #
-    #
-    # job = cron.new(command='echo hello world')
-    # job.minute.every(1)
+@repeat(every(1).hour)
+def job():
     base = DB()
-    # os.system('python speedtestNew.py --json > myoutput.json')
-    #
-    # with open('myoutput.json') as f:
-    #     unfiltered = json.load(f)
+    os.system('python speedtestNew.py --json > myoutput.json')
 
-    # base.enter_data(data=data)
-    # results stores the query results as a dataFrame object
+    with open('myoutput.json') as f:
+        unfiltered = json.load(f)
 
+    #base.enter_data(data=unfiltered)
+    #results stores the query results as a dataFrame object
+
+def main():
+
+    while True:
+        run_pending()
+        time.sleep(1)
 
     specific_1_hour_results = base.cream_of_the_crop(hours=1)
     print(specific_1_hour_results)
