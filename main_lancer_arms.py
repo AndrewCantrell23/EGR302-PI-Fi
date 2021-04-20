@@ -40,31 +40,26 @@ def job():
     base.enter_data(data=data)
 
 
-def main():
+def database_queries(filename, amount):
     base = DB()
+    specific_results = base.cream_of_the_crop(hours=amount)
+    print(specific_results)
+
+    specific_json = specific_results.to_json(orient='records', date_format='iso')
+    parsed = json.loads(specific_json)
+    replace_datetime_formats(parsed)
+
+    with open(f'webpages/json data/{filename}', 'w', encoding='utf-8') as f:
+        json.dump(parsed, f, ensure_ascii=False, indent=4)
+
+
+def main():
     while True:
         run_pending()
         time.sleep(1)
 
-    specific_1_hour_results = base.cream_of_the_crop(hours=1)
-    print(specific_1_hour_results)
-
-    specific_json = specific_1_hour_results.to_json(orient='records', date_format='iso')
-    parsed = json.loads(specific_json)
-    replace_datetime_formats(parsed)
-
-    with open(f'webpages/json data/recent one hour all location speeds.json', 'w', encoding='utf-8') as f:
-        json.dump(parsed, f, ensure_ascii=False, indent=4)
-
-    specific_5_hour_results = base.cream_of_the_crop(hours=5)
-    print(specific_5_hour_results)
-
-    specific_json = specific_5_hour_results.to_json(orient='records', date_format='iso')
-    parsed = json.loads(specific_json)
-    replace_datetime_formats(parsed)
-
-    with open(f'webpages/json data/recent five hours all location speeds.json', 'w', encoding='utf-8') as f:
-        json.dump(parsed, f, ensure_ascii=False, indent=4)
+        database_queries(filename='recent one hour all location speeds.json', amount=1)
+        database_queries(filename='recent five hours all location speeds.json', amount=5)
 
 
 if __name__ == '__main__':
