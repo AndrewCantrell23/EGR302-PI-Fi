@@ -30,7 +30,7 @@ def job():
         unfiltered = json.load(f)
 
     data = {
-        'Location': 'Lancer Arms',
+        'Location': 'Point',
         'Ping': unfiltered['ping'],
         'Download': unfiltered['download'] / 1000000,
         'Upload': unfiltered['upload'] / 1000000,
