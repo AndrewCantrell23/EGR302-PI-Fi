@@ -29,6 +29,8 @@ import platform
 import threading
 import xml.parsers.expat
 
+import pytz
+
 try:
     import gzip
     GZIP_BASE = gzip.GzipFile
@@ -944,9 +946,11 @@ class SpeedtestResults(object):
         self.client = client or {}
 
         self._share = None
-        self.timestamp = '%sZ' % datetime.now(timezone.utc).astimezone().isoformat()
+        pst = pytz.timezone("Us/Pacific")
+        self.timestamp = '%sZ' % datetime.now(timezone.utc).astimezone(pst).isoformat()
         self.bytes_received = 0
         self.bytes_sent = 0
+
 
         if opener:
             self._opener = opener

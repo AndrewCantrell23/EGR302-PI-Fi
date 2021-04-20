@@ -11,6 +11,8 @@ class DB:
     NOTE: 10.147.17.9
           ubuntu
           R2017ocky!
+
+    /var/www/PyFi/EGR302-Py-Fi /webpages
     """
 
     def __init__(self):
@@ -113,6 +115,7 @@ class DB:
         ping = data['Ping']
         down = data['Download']
         up = data['Upload']
-        self.cursor.execute("INSERT INTO SpeedTests (Location, Ping, Download, Upload) "
-                            "VALUES (?, ?, ?, ?)", (location, ping, down, up))
+        time = data['Times']
+        self.cursor.execute("INSERT INTO SpeedTests (Location, Ping, Download, Upload, Times) "
+                            "VALUES (?, ?, ?, ?, ?)", (location, ping, down, up, time))
         self.conn.commit()
