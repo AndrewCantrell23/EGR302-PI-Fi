@@ -21,7 +21,7 @@ def replace_datetime_formats(parsed_list):
                 speedtest_object.update({dictPair: updated_date})
 
 
-@repeat(every(1).minute)
+@repeat(every(1).hour)
 def job():
     base = DB()
     os.system('python speedtestNew.py --json > myoutput.json')
