@@ -1,16 +1,30 @@
 [
     {
-        "Location": "Point",
-        "Times": "04/20/21 08:40:39 AM",
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 08:46:45 PM",
         "Ping": 44,
-        "Download": 57.422,
-        "Upload": 47.077
+        "Download": 70.398,
+        "Upload": 51.018
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/21/21 08:46:45 PM",
+        "Ping": 42,
+        "Download": 68.391,
+        "Upload": 51.154
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 08:45:26 PM",
+        "Ping": 43,
+        "Download": 70.387,
+        "Upload": 56.738
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:42:12 PM",
-        "Ping": 74,
-        "Download": 11.62,
-        "Upload": 2.331
+        "Times": "04/21/21 08:46:45 PM",
+        "Ping": 43,
+        "Download": 70.923
+        "Upload": 52.747
     }
 ]

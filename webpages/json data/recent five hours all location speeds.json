@@ -1,72 +1,142 @@
 [
     {
-        "Location": "Point",
-        "Times": "04/20/21 08:40:39 AM",
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 04:46:45 PM",
+        "Ping": 43,
+        "Download": 69.424,
+        "Upload": 70.361
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 05:46:45 PM",
+        "Ping": 41,
+        "Download": 70.669,
+        "Upload": 72.008
+    },
+    {
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 06:46:45 PM",
         "Ping": 44,
         "Download": 57.422,
         "Upload": 47.077
     },
     {
-        "Location": "Point",
-        "Times": "04/20/21 08:42:07 AM",
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 07:46:45 PM",
         "Ping": 43,
         "Download": 68.372,
         "Upload": 58.367
     },
     {
-        "Location": "Point",
-        "Times": "04/20/21 09:43:13 AM",
+        "Location": "Lancer Arms",
+        "Times": "04/21/21 08:46:45 PM",
         "Ping": 44,
         "Download": 70.398,
         "Upload": 51.018
     },
     {
-        "Location": "Point",
-        "Times": "04/20/21 10:43:42 AM",
+        "Location": "Colony",
+        "Times": "04/21/21 04:46:45 PM",
         "Ping": 44,
         "Download": 70.447,
         "Upload": 62.418
     },
     {
-        "Location": "Point",
-        "Times": "04/20/21 11:44:10 AM",
+        "Location": "Colony",
+        "Times": "04/21/21 05:46:45 PM",
         "Ping": 43,
         "Download": 70.409,
-        "Upload": 51.43
+        "Upload": 51.430
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/21/21 06:46:45 PM",
+        "Ping": 43,
+        "Download": 70.428,
+        "Upload": 59.550
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/21/21 07:46:45 PM",
+        "Ping": 41,
+        "Download": 70.182,
+        "Upload": 61.648
+    },
+    {
+        "Location": "Colony",
+        "Times": "04/21/21 08:46:45 PM",
+        "Ping": 42,
+        "Download": 68.391,
+        "Upload": 51.154
+    },
+    {
+        "Location": "Point",
+        "Times": "04/21/21 04:46:45 PM",
+        "Ping": 42,
+        "Download": 67.215,
+        "Upload": 59.751
+    },
+    {
+        "Location": "Point",
+        "Times": "04/21/21 05:46:45 PM",
+        "Ping": 43,
+        "Download": 71.912,
+        "Upload": 66.336
+    },
+    {
+        "Location": "Point",
+        "Times": "04/21/21 06:46:45 PM",
+        "Ping": 43,
+        "Download": 59.282,
+        "Upload": 43.525
+    },
+    {
+        "Location": "Point",
+        "Times": "04/21/21 07:46:45 PM",
+        "Ping": 223,
+        "Download": 2.758,
+        "Upload": 8.120
+    },
+    {
+        "Location": "Point",
+        "Times": "04/12/21 08:45:26 PM",
+        "Ping": 43,
+        "Download": 70.387,
+        "Upload": 56.738
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:42:12 PM",
-        "Ping": 74,
-        "Download": 11.62,
-        "Upload": 2.331
+        "Times": "04/21/21 04:46:45 PM",
+        "Ping": 42,
+        "Download": 66.920,
+        "Upload": 54.799
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:43:12 PM",
-        "Ping": 60,
-        "Download": 12.871,
-        "Upload": 2.553
+        "Times": "04/21/21 05:46:45 PM",
+        "Ping": 42,
+        "Download": 66.074,
+        "Upload": 52.724
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:44:04 PM",
-        "Ping": 53,
-        "Download": 8.52,
-        "Upload": 2.506
+        "Times": "04/21/21 06:46:45 PM",
+        "Ping": 42,
+        "Download": 71.456,
+        "Upload": 53.309
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:44:50 PM",
-        "Ping": 73,
-        "Download": 11.81,
-        "Upload": 2.564
+        "Times": "04/21/21 07:46:45 PM",
+        "Ping": 43,
+        "Download": 69.886,
+        "Upload": 54.920
     },
     {
         "Location": "Smith",
-        "Times": "04/12/21 05:45:19 PM",
-        "Ping": 46,
-        "Download": 14.015,
-        "Upload": 2.364
+        "Times": "04/21/21 08:46:45 PM",
+        "Ping": 43,
+        "Download": 70.923
+        "Upload": 52.747
     }
 ]
