@@ -21,9 +21,11 @@ def replace_datetime_formats(parsed_list):
                 speedtest_object.update({dictPair: updated_date})
 
 
-def database_queries(filename, amount, database_connection):
-    specific_results = database_connection.cream_of_the_crop(hours=amount)
-
+def database_queries(filename, amount):
+    base = DB()
+    specific_results = base.cream_of_the_crop(hours=amount)
+    base.closing()
+    
     specific_json = specific_results.to_json(orient='records', date_format='iso')
     parsed = json.loads(specific_json)
     replace_datetime_formats(parsed)
@@ -34,10 +36,8 @@ def database_queries(filename, amount, database_connection):
 
 @repeat(every(1).hour)
 def job():
-    base = DB()
-    database_queries(filename='recent one hour all location speeds.json', amount=1, database_connection=base)
-    database_queries(filename='five hours all location speeds.json', amount=5, database_connection=base)
-    base.closing()
+    database_queries(filename='recent one hour all location speeds.json', amount=1)
+    database_queries(filename='five hours all location speeds.json', amount=5)
 
 
 def main():
