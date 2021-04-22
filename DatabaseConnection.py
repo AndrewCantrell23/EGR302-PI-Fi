@@ -66,11 +66,7 @@ class DB:
     def cream_of_the_crop(self, hours):
         self.cursor.execute(
             "(SELECT * FROM SpeedTests "
-            "WHERE Location = 'Lancer Arms' "
-            f"ORDER BY Times ASC LIMIT {hours}) "
-            "UNION ALL "
-            "(SELECT * FROM SpeedTests "
-            "WHERE Location = 'Colony' "
+            "WHERE Location = 'UP' "
             f"ORDER BY Times ASC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
@@ -78,7 +74,7 @@ class DB:
             f"ORDER BY Times ASC LIMIT {hours}) "
             "UNION ALL "
             "(SELECT * FROM SpeedTests "
-            "WHERE Location = 'Smith' "
+            "WHERE Location = 'Engineering' "
             f"ORDER BY Times ASC LIMIT {hours});"
         )
         self.conn.commit()
@@ -119,3 +115,6 @@ class DB:
         self.cursor.execute("INSERT INTO SpeedTests (Location, Ping, Download, Upload, Times) "
                             "VALUES (?, ?, ?, ?, ?)", (location, ping, down, up, time))
         self.conn.commit()
+
+    def closing(self):
+        self.conn.close()
