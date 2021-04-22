@@ -12,5 +12,61 @@
         "Ping": 43,
         "Download": 68.372,
         "Upload": 58.367
+    },
+    {
+        "Location": "Point",
+        "Times": "04/20/21 09:43:13 AM",
+        "Ping": 44,
+        "Download": 70.398,
+        "Upload": 51.018
+    },
+    {
+        "Location": "Point",
+        "Times": "04/20/21 10:43:42 AM",
+        "Ping": 44,
+        "Download": 70.447,
+        "Upload": 62.418
+    },
+    {
+        "Location": "Point",
+        "Times": "04/20/21 11:44:10 AM",
+        "Ping": 43,
+        "Download": 70.409,
+        "Upload": 51.43
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:42:12 PM",
+        "Ping": 74,
+        "Download": 11.62,
+        "Upload": 2.331
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:43:12 PM",
+        "Ping": 60,
+        "Download": 12.871,
+        "Upload": 2.553
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:44:04 PM",
+        "Ping": 53,
+        "Download": 8.52,
+        "Upload": 2.506
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:44:50 PM",
+        "Ping": 73,
+        "Download": 11.81,
+        "Upload": 2.564
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:45:19 PM",
+        "Ping": 46,
+        "Download": 14.015,
+        "Upload": 2.364
     }
 ]

@@ -5,5 +5,12 @@
         "Ping": 44,
         "Download": 57.422,
         "Upload": 47.077
+    },
+    {
+        "Location": "Smith",
+        "Times": "04/12/21 05:42:12 PM",
+        "Ping": 74,
+        "Download": 11.62,
+        "Upload": 2.331
     }
 ]
