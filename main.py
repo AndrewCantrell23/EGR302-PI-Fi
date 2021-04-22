@@ -37,7 +37,7 @@ def database_queries(filename, amount):
 @repeat(every(1).hour)
 def job():
     database_queries(filename='recent one hour all location speeds.json', amount=1)
-    database_queries(filename='five hours all location speeds.json', amount=5)
+    database_queries(filename='recent five hours all location speeds.json', amount=5)
 
 
 def main():
