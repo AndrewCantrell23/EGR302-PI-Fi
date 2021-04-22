@@ -35,8 +35,8 @@ def database_queries(filename, amount, database_connection):
 @repeat(every(1).hour)
 def job():
     base = DB()
-    database_queries(filename='TESTING recent one hour all location speeds.json', amount=1, database_connection=base)
-    database_queries(filename='TESTING five hours all location speeds.json', amount=5, database_connection=base)
+    database_queries(filename='recent one hour all location speeds.json', amount=1, database_connection=base)
+    database_queries(filename='five hours all location speeds.json', amount=5, database_connection=base)
     base.closing()
 
 
