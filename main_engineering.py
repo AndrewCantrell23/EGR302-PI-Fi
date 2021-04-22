@@ -43,7 +43,7 @@ def job():
 def database_queries(filename, amount):
     base = DB()
     specific_results = base.cream_of_the_crop(hours=amount)
-    print(specific_results)
+    #print(specific_results)
 
     specific_json = specific_results.to_json(orient='records', date_format='iso')
     parsed = json.loads(specific_json)
